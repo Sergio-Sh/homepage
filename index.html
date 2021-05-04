@@ -2,10 +2,834 @@
 <html>
 <head>
     <meta charset="UTF-8" />
+
     <title>Résumé</title>
     <link rel="stylesheet" href="https://binary-studio-academy.github.io/stage-2/assets/stylesheets/base.css">
+    <meta name="description" content="ddbullfrog's CV">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+    <link rel="shortcut icon" href="https://Sergio-Sh.github.io/homepage/dzhejson-stejtem.jpg" />
+
+    <style>
+        body {
+            background-color: #F0F0F0;
+            font-family: 'Source Sans Pro', sans-serif;
+        }
+
+        a {
+            color: #333;
+            text-decoration: none;
+        }
+
+        .btn-dark {
+            color: #ffffff;
+            text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+            background-color: #555555;
+            background-image: -moz-linear-gradient(top, #666666, #444444);
+            background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#666666), to(#444444));
+            background-image: -webkit-linear-gradient(top, #666666, #444444);
+            background-image: -o-linear-gradient(top, #666666, #444444);
+            background-image: linear-gradient(to bottom, #666666, #444444);
+            background-repeat: repeat-x;
+            border-color: #555 #555 #333;
+            border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+        }
+
+            .btn-dark:hover,
+            .btn-dark:focus,
+            .btn-dark:active,
+            .btn-dark.active,
+            .btn-dark.disabled,
+            .btn-dark[disabled] {
+                color: #ffffff;
+                background-color: #444444;
+            }
+
+        .footer {
+            padding: 20px 0;
+            text-align: center;
+            color: #f0f0f0;
+            background-color: #575757;
+            background-color: rgba(0, 0, 0, 0.6);
+        }
+
+        hr {
+            border: 0;
+            border-top: 1px solid #ccc;
+            border-bottom: 1px solid #eee;
+        }
+
+        .header {
+            background-color: #f0f0f0;
+            background-image: url(../img/bg-top.jpg);
+            border-bottom: 1px solid #dddddd;
+            box-shadow: 0 0 3px rgba(190, 190, 190, 0.75);
+            top: 0;
+            right: 0;
+            left: 0;
+            z-index: 1030;
+            height: auto;
+            padding: 20px 0;
+            margin-bottom: 20px;
+        }
+
+            .header img {
+                float: left;
+                height: 85px;
+                margin-right: 15px;
+                padding: 11px;
+            }
+
+            .header li {
+                list-style-type: none;
+                padding: 4px 0;
+            }
+
+            .header ul {
+                margin-top: 5px;
+                margin-left: 0;
+                padding-left: 0;
+            }
+
+        .grid-block {
+            background-color: #f0f0f0;
+            background-color: rgba(255, 255, 255, 0.4);
+            border: 1px solid #dddddd;
+            padding: 15px 25px;
+            margin: 10px 0;
+        }
+
+            .grid-block:before {
+                content: '';
+                display: block;
+                position: absolute;
+                bottom: 0;
+                right: 0;
+                width: 0;
+                height: 0;
+                border-color: transparent #ddd #ddd transparent;
+                border-style: solid;
+                border-width: 21px;
+            }
+
+            .grid-block:after {
+                content: '';
+                display: block;
+                position: absolute;
+                bottom: 0;
+                right: 0;
+                width: 0;
+                height: 0;
+                border-color: transparent #ebebeb #ebebeb transparent;
+                border-style: solid;
+                border-width: 20px;
+            }
+
+            .grid-block h4 {
+                word-wrap: break-word;
+            }
+
+        .deviter {
+            height: 1px;
+            margin: 10px 0;
+            border-bottom: 1px dashed #ddd;
+        }
+
+        /* timeline css */
+        .timeline {
+            list-style: none;
+            padding: 20px 0 20px;
+            position: relative;
+        }
+
+            .timeline:before {
+                top: 0;
+                bottom: 0;
+                position: absolute;
+                content: " ";
+                width: 3px;
+                background-color: #eeeeee;
+                margin-left: -1.5px;
+                left: 2%;
+            }
+
+            .timeline > li {
+                margin-bottom: 20px;
+                position: relative;
+                margin-left: 67px;
+            }
+
+                .timeline > li:before,
+                .timeline > li:after {
+                    content: " ";
+                    display: table;
+                }
+
+                .timeline > li:after {
+                    clear: both;
+                }
+
+                .timeline > li:before,
+                .timeline > li:after {
+                    content: " ";
+                    display: table;
+                }
+
+                .timeline > li:after {
+                    clear: both;
+                }
+
+                .timeline > li > .timeline-panel {
+                    float: left;
+                    border: 1px solid #d4d4d4;
+                    border-radius: 2px;
+                    padding: 20px;
+                    position: relative;
+                    -webkit-box-shadow: 0 1px 6px rgba(0, 0, 0, 0.175);
+                    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.175);
+                }
+
+                    .timeline > li > .timeline-panel:before {
+                        position: absolute;
+                        top: 26px;
+                        right: -15px;
+                        display: inline-block;
+                        border-top: 15px solid transparent;
+                        border-left: 15px solid #ccc;
+                        border-right: 0 solid #ccc;
+                        border-bottom: 15px solid transparent;
+                        content: " ";
+                    }
+
+                    .timeline > li > .timeline-panel:after {
+                        position: absolute;
+                        top: 27px;
+                        right: -14px;
+                        display: inline-block;
+                        border-top: 14px solid transparent;
+                        border-left: 14px solid #fff;
+                        border-right: 0 solid #fff;
+                        border-bottom: 14px solid transparent;
+                        content: " ";
+                    }
+
+                .timeline > li > .timeline-badge {
+                    color: #fff;
+                    width: 50px;
+                    height: 50px;
+                    line-height: 50px;
+                    font-size: 1.4em;
+                    text-align: center;
+                    position: absolute;
+                    top: 24px;
+                    margin-left: -70px;
+                    background-color: #999999;
+                    z-index: 100;
+                    border-top-right-radius: 50%;
+                    border-top-left-radius: 50%;
+                    border-bottom-right-radius: 50%;
+                    border-bottom-left-radius: 50%;
+                }
+
+                .timeline > li.timeline-inverted > .timeline-panel {
+                }
+
+                    .timeline > li.timeline-inverted > .timeline-panel:before {
+                        border-left-width: 0;
+                        border-right-width: 15px;
+                        left: -15px;
+                        right: auto;
+                    }
+
+                    .timeline > li.timeline-inverted > .timeline-panel:after {
+                        border-left-width: 0;
+                        border-right-width: 14px;
+                        left: -14px;
+                        right: auto;
+                    }
+
+        .timeline-badge.primary {
+            background-color: #2e6da4 !important;
+        }
+
+        .timeline-badge.success {
+            background-color: #3f903f !important;
+        }
+
+        .timeline-badge.warning {
+            background-color: #f0ad4e !important;
+        }
+
+        .timeline-badge.danger {
+            background-color: #d9534f !important;
+        }
+
+        .timeline-badge.info {
+            background-color: #5bc0de !important;
+        }
+
+        .timeline-title {
+            margin-top: 0;
+            color: inherit;
+        }
+
+        .timeline-body > p,
+        .timeline-body > ul {
+            margin-bottom: 0;
+        }
+
+            .timeline-body > p + p {
+                margin-top: 5px;
+            }
+
+        /* Tech Stack*/
+        .tech-stack {
+            color: #fff;
+            display: inline-block;
+            margin-right: 5px;
+            margin-bottom: 5px;
+            padding: 5px 5px 5px 25px;
+            background: #A75265;
+            position: relative;
+        }
+
+            .tech-stack:before {
+                content: "\f004";
+                font-family: FontAwesome;
+                font-style: normal;
+                font-weight: normal;
+                position: absolute;
+                top: 6px;
+                left: 7px;
+            }
+
+        /* stackoverflow css */
+        .list-stackoverflow span {
+            margin-right: 5px;
+            width: 35px;
+        }
+
+        /* skills css */
+        .list-skills li .progress {
+            height: 10px;
+            box-shadow: none;
+            overflow: inherit;
+        }
+
+            .list-skills li .progress .progress-bar {
+                border-radius: 5px;
+                text-align: right;
+                position: relative;
+                background: #63A4B5;
+                box-shadow: none;
+            }
+
+                .list-skills li .progress .progress-bar span {
+                    position: relative;
+                    bottom: -15px;
+                    font-size: 10px;
+                    color: white;
+                    right: -13px;
+                    display: inline-block;
+                    background: #D84E4E;
+                    padding: 1px 5px;
+                    border-radius: 5px;
+                }
+
+                    .list-skills li .progress .progress-bar span:after {
+                        content: "";
+                        position: absolute;
+                        left: 50%;
+                        margin-left: -5px;
+                        top: -5px;
+                        border-bottom: 5px solid #D84E4E;
+                        border-left: 5px solid transparent;
+                        border-right: 5px solid transparent;
+                    }
+
+        .list-skills li:nth-child(even) .progress-bar {
+            background: #4B6F78;
+        }
+
+        .list-strip li {
+            color: white;
+            padding: 10px;
+            margin-bottom: 6px;
+            border-radius: 5px;
+            background: #4B6F78;
+        }
+
+            .list-strip li:nth-child(even) {
+                background: #BA4E4E;
+            }
+
+        .btn-flat {
+            background: #ba4e4e;
+            color: white;
+            font-weight: 300;
+            padding-left: 20px;
+            border-radius: 5px;
+            margin-top: 5px;
+            padding-right: 20px;
+            box-shadow: 0 5px 0 #a63838;
+            position: relative;
+            margin-bottom: 5px;
+        }
+
+            .btn-flat:hover,
+            .btn-flat:focus,
+            .btn-flat.active,
+            .btn-flat.style2:hover {
+                color: white;
+                bottom: -5px;
+                box-shadow: none;
+            }
+
+            .btn-flat.style2 {
+                background: #63A4B5;
+                box-shadow: 0 5px 0 #5b94a3;
+            }
+
+        .title {
+            border-bottom: 1px solid #ddd;
+            position: relative;
+            padding-bottom: 15px;
+            margin-bottom: 20px;
+            font-size: 18px;
+            font-weight: 700;
+        }
+
+            .title.with-icon {
+                padding-left: 50px;
+            }
+
+            .title .cat-title {
+                margin-right: 5px;
+                display: inline-block;
+                padding-bottom: 10px;
+                position: absolute;
+                left: 0;
+                background: #249EBD;
+                padding: 10px;
+                color: white;
+                min-width: 40px;
+                text-align: center;
+                top: -6px;
+                min-height: 40px;
+                padding-bottom: 13px;
+                border-radius: 5px;
+            }
+
+                .title .cat-title:after {
+                    content: "";
+                    position: absolute;
+                    left: 50%;
+                    margin-left: -10px;
+                    bottom: -10px;
+                    border-top: 10px solid #249EBD;
+                    border-left: 10px solid transparent;
+                    border-right: 10px solid transparent;
+                }
+
+        .badge-right-float {
+            float: right;
+        }
+
+        .ribbon {
+            position: absolute;
+            top: 42px;
+            width: 200px;
+            padding: 1px 0;
+            background: #000;
+            color: #eee;
+            -moz-box-shadow: 0 0 10px rgba(0,0,0,0.5);
+            -webkit-box-shadow: 0 0 10px rgba(0,0,0,0.5);
+            box-shadow: 0 0 10px rgba(0,0,0,0.5);
+        }
+
+            .ribbon.left {
+                left: -42px;
+                -moz-transform: rotate(-45deg);
+                -webkit-transform: rotate(-45deg);
+                -o-transform: rotate(-45deg);
+                -ms-transform: rotate(-45deg);
+                transform: rotate(-45deg);
+            }
+
+            .ribbon.right {
+                right: -42px;
+                -moz-transform: rotate(45deg);
+                -webkit-transform: rotate(45deg);
+                -o-transform: rotate(45deg);
+                -ms-transform: rotate(45deg);
+                transform: rotate(45deg);
+            }
+
+            .ribbon a,
+            .ribbon a:visited,
+            .ribbon a:active,
+            .ribbon a:hover {
+                display: block;
+                padding: 1px 0;
+                height: 24px;
+                line-height: 24px;
+                color: inherit;
+                text-align: center;
+                text-decoration: none;
+                font-family: 'Cabin Condensed', sans-serif;
+                font-size: 16px;
+                font-weight: 500;
+                border: 1px solid rgba(255,255,255,0.3);
+                -moz-text-shadow: 0 0 10px rgba(0,0,0,0.31);
+                -webkit-text-shadow: 0 0 10px rgba(0,0,0,0.31);
+                text-shadow: 0 0 10px rgba(0,0,0,0.31);
+            }
+
+            .ribbon.black {
+                background: #000;
+            }
+
+            .ribbon.red {
+                background: #c00;
+            }
+
+            .ribbon.blue {
+                background: #09e;
+            }
+
+            .ribbon.green {
+                background: #0a0;
+            }
+
+            .ribbon.orange {
+                background: #d80;
+            }
+
+            .ribbon.purple {
+                background: #c0c;
+            }
+
+            .ribbon.grey {
+                background: #888;
+            }
+
+            .ribbon.white {
+                background: #eee;
+                color: black;
+            }
+
+                .ribbon.white a {
+                    border: 2px dotted rgba(100,100,100,0.2);
+                }
+    </style>
 </head>
   <body>
-    ― Hello World! &#x1F609;
+    <header class="header">
+        <div class="container-fluid">
+            <div class="row-fluid">
+                <div class="col-sm-8">
+                    <img src="https://Sergio-Sh.github.io/homepage/dzhejson-stejtem.jpg" title="Avatar" alt="My Avatar">
+                    <h4>Jason Statham</h4>
+                    <p>Актор, геній, мільярдер, плейбой, філантроп</p>
+                    <p>Великобританія</p>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="col-sm-4 visible-md-block visible-lg-block visible-sm-block">
+                    <p><i class="fa fa-instagram fa-fw"></i><a href="https://www.instagram.com/jasonstatham/?hl=ru" target="_blank">  @bald </a></p>
+                    <p><i class="fa fa-facebook-square fa-fw"></i> <a href="https://www.facebook.com/JasonStatham" target="_blank"> facebook.com/JasonStatham </a></p>
+                </div>
+            </div>
+        </div>
+    </header>
+      <main>
+          <article>
+            <div class="page">
+                <div class="wrapper">
+                    <div class="container-fluid">
+                        <div class="row-fluid">
+                            <div class="col-md-8">
+
+                                <h3 class="title with-icon">&#128345;Timeline</h3>
+                                <ul class="timeline">
+
+                                    <li class="timeline-inverted">
+
+                                        <div class="timeline-badge info">1998</div>
+
+                                        <div class="timeline-panel grid-block">
+                                            <div class="timeline-heading">
+
+                                                <h4 class="timeline-title">Початок кіно кар'єри </h4>
+
+                                                <p>
+                                                    <small class="text-muted">
+
+                                                        Это не краденое, просто за него не заплатили.(с)Джейсон стетхем
+
+                                                    </small>
+                                                </p>
+                                            </div>
+                                            <div class="timeline-body">
+
+                                                <p>Через деякий час власник фірми, яку рекламував Джейсон Стейтем, став основним продюсером дебютної картини Гая Річі «Карти, гроші, два стволи» та запропонував режисерові кандидатуру Стейтема на одну з ролей у фільмі. Режисер був заінтригований досвідом вуличної торгівлі Стейтема і вражений його модельною роботою.</p>
+
+                                            </div>
+                                        </div>
+                                    </li>
+
+                                    <li class="timeline-inverted">
+
+                                        <div class="timeline-badge info">1996</div>
+
+                                        <div class="timeline-panel grid-block">
+                                            <div class="timeline-heading">
+
+                                                <h4 class="timeline-title">Модельна кар'єра </h4>
+
+                                                <p>
+                                                    <small class="text-muted">
+
+                                                        Я парнішка модный, по жизни свободный, корешей не бросаю и братву уважаю    (с)Джейсон стетхем
+
+                                                    </small>
+                                                </p>
+
+                                            </div>
+                                            <div class="timeline-body">
+
+                                                <p>В кінці дев'яностих один рекламний агент, що працює, головним чином, зі спортсменами, запросив Стейтема взяти участь в рекламній кампанії Tommy Hilfiger. Так Джейсон знявся в рекламі джинсів, став рекламним обличчям бренду, з чого і почалася його модельна та акторська кар'єра.</p>
+
+                                            </div>
+                                        </div>
+                                    </li>
+
+                                    <li class="timeline-inverted">
+
+                                        <div class="timeline-badge info">1978</div>
+
+                                        <div class="timeline-panel grid-block">
+                                            <div class="timeline-heading">
+
+                                                <h4 class="timeline-title">Молоді роки </h4>
+
+                                                <p>
+                                                    <small class="text-muted">
+
+                                                        Кто не курит и не пьёт - ровно дышит, сильно бьёт.    (с)Джейсон стетхем
+
+                                                    </small>
+                                                </p>
+                                            </div>
+                                            <div class="timeline-body">
+
+                                                <p>Його батько був боксером і гімнастом і навчав цьому Джейсона, але його справжньою пристрастю були стрибки в воду. Протягом 12 років Стейтем входив до складу національної збірної Великобританії зі стрибків у воду.</p>
+
+                                            </div>
+                                        </div>
+                                    </li>
+
+                                    <li class="timeline-inverted">
+
+                                        <div class="timeline-badge info">1967</div>
+
+                                        <div class="timeline-panel grid-block">
+                                            <div class="timeline-heading">
+
+                                                <h4 class="timeline-title">Дитинство </h4>
+
+                                                <p>
+                                                    <small class="text-muted">
+
+                                                        Когда брат рядом враги ложатся градом...    (с)Джейсон стетхем
+
+                                                    </small>
+                                                </p>
+                                            </div>
+                                            <div class="timeline-body">
+
+                                                <p>Джейсон Стейтем народився 26 липня 1967 року в Шайрбруке, графство Дербішир. Він був другим сином у родині лаунж-співака і швачки, що стала танцівницею. Пізніше переїхав в Грейт-Ярмут, графство Норфолк, і ріс, слідуючи стопам своїх батьків, опановуючи мистецтвом вуличного театру.</p>
+
+                                            </div>
+                                        </div>
+                                    </li>
+
+                                </ul>
+
+
+                                <h3 class="title with-icon">Особисте життя</h3>
+                                <ul class="timeline">
+
+                                    <li class="timeline-inverted">
+
+                                            <div class="timeline-heading">
+   
+
+                                                <p>
+                                                    <small class="text-muted">
+
+                                                        Ласка одной львицы лучше, чем гарем дешевых гиен(с)Джейсон стетхем
+
+                                                    </small>
+                                                </p>
+
+                                            </div>
+                                            <div class="timeline-body">
+                                                <p>Близько семи років Джейсон зустрічався з англійською моделлю і актрисою Келлі Брук, поки та не познайомилася з актором Біллі Зейн на зйомках фільму. Пізніше Джейсон зустрів співачку Софі Монк, але і з нею незабаром розійшовся. З квітня 2010 року зустрічається з моделлю Роузі Хантінгтон-Уайтлі. 10 січня 2016 року ці фірми оголосили про свої заручини. У лютому 2017 року стало відомо, що пара чекає первістка. 24 червня 2017 року біля Джейсона і Роузі народився син Джек Оскар Стейтем.</p>
+                                            </div>
+                                        </div>
+                                    </li>
+
+                                </ul>
+
+                            </div>
+                            <div class="col-md-4">
+
+                                <h3 class="title with-icon"><span class="fa btn-flat"></span> Skills</h3>
+
+
+                                <div class="grid-block">
+                                    <ul class="list-unstyled list-skills">
+
+                                        <li>
+
+                                            <span class="caption-skill">Бокс</span>
+
+
+                                            <div class="progress">
+                                                <div class="progress-bar" style="width: 100%">
+                                                    <span>100% </span>
+                                                </div>
+                                            </div>
+
+                                        </li>
+
+                                        <li>
+
+                                            <span class="caption-skill">Привлекательность</span>
+
+
+                                            <div class="progress">
+                                                <div class="progress-bar" style="width: 100%">
+                                                    <span> 1000% </span>
+                                                </div>
+                                            </div>
+
+                                        </li>
+
+                                        <li>
+
+                                            <span class="caption-skill">Карате</span>
+
+
+                                            <div class="progress">
+                                                <div class="progress-bar" style="width: 70%">
+                                                    <span>70% </span>
+                                                </div>
+                                            </div>
+
+                                        </li>
+
+                                        <li>
+
+                                            <span class="caption-skill">Актерское мастерство</span>
+
+
+                                            <div class="progress">
+                                                <div class="progress-bar" style="width: 80%">
+                                                    <span>80% </span>
+                                                </div>
+                                            </div>
+
+                                        </li>
+
+                                        <li>
+
+                                            <span class="caption-skill">Дипломатія</span>
+
+
+                                            <div class="progress">
+                                                <div class="progress-bar" style="width: 1%">
+                                                    <span>0% </span>
+                                                </div>
+                                            </div>
+
+                                        </li>
+
+                                    </ul>
+                                </div>
+
+
+
+                                <div class="deviter"></div>
+                                <h3 class="title with-icon"> Language Skills</h3>
+                                <div class="grid-block">
+                                    <ul class="list-unstyled list-strip">
+
+
+
+                                        <li>
+                                            <i class="fa fa-check"></i> <span class="badge badge-green badge-right-float">Native</span>English
+                                        </li>
+
+
+
+
+
+                                        <li>
+                                            <i class="fa fa-check"></i> <span class="badge badge-green badge-right-float">Professional</span>Пацанские фразочки
+                                        </li>
+
+
+
+
+
+                                        <li>
+                                             <span class="badge badge-green badge-right-float">Limit</span>Without mat
+                                        </li>
+
+
+
+                                    </ul>
+                                </div>
+
+                                <div class="deviter"></div>
+                                <h3 class="title with-icon"><span class="fa btn-flat"></span> Location</h3>
+                                <div class="grid-block">
+                                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2716.7017675105294!2d28.183490315756103!3d47.08531173183506!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40ca4b4bbcd8da0d%3A0xb5d8276443ecda82!2sPizdabol&#39;s%20Home!5e0!3m2!1suk!2sus!4v1620142880009!5m2!1suk!2sus" width="100%" height="100%" frameborder="0" style="border:0"></iframe>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          </article>
+      </main>
+
+
+    <div class="footer">
+        <div class="container-fluid">
+            <div class="row-fluid">
+                <div class="col-md-12">
+                    &#128165;"Хто не з нами той під нами."	&#128578;
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date(); a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-63653234-1', 'auto');
+        ga('send', 'pageview');
+
+    </script>
+
   </body>
+
 </html>
